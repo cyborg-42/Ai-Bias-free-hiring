@@ -1,0 +1,322 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f7f9fc, #e0f7ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #1c1c1c;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== Background Shapes ===== */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    z-index: -1;
+}
+body::before {
+    width: 350px;
+    height: 350px;
+    background: #0077b6;
+    top: -100px;
+    left: -100px;
+}
+body::after {
+    width: 450px;
+    height: 450px;
+    background: #90e0ef;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* ===== Container Card ===== */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+/* ===== Headings ===== */
+h1 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+.subtitle {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* ===== Form Elements ===== */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: left;
+}
+select, input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+select:focus, input[type="file"]:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 10px rgba(0,119,182,0.2);
+    outline: none;
+}
+
+/* ===== Attractive Gradient Button ===== */
+.cta-button {
+    margin-top: 25px;
+    width: 100%;                /* full width */
+    background: linear-gradient(90deg, #0077b6, #00b4d8); /* gradient colors */
+    color: #fff;                /* white text */
+    font-size: 1.2rem;          /* slightly bigger text */
+    font-weight: 600;           /* bold text */
+    padding: 14px;              /* enough padding for comfort */
+    border: none;               /* no border */
+    border-radius: 15px;        /* rounded corners */
+    cursor: pointer;            /* pointer on hover */
+    transition: all 0.3s ease;  /* smooth hover transition */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* soft shadow */
+}
+
+/* Hover effect */
+.cta-button:hover {
+    background: linear-gradient(90deg, #005f8e, #0096c7); /* darker gradient */
+    transform: translateY(-3px);   /* subtle lift effect */
+    box-shadow: 0 10px 25px rgba(22, 55, 112, 0.2); /* stronger shadow on hover */
+}
+
+/* Active (clicked) effect */
+.cta-button:active {
+    transform: translateY(0);      /* return button to original position */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+/* ===== Results Section ===== */
+.result-section {
+    margin-top: 35px;
+    background: #f0f8ff;
+    border-left: 6px solid #0077b6;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.recommendation.green {
+    color: #27ae60;
+    font-weight: 600;
+}
+.recommendation.orange {
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.skills-list {
+    background: #e4f2ff;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* ===== Divider ===== */
+hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #d1d5db;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 35px 25px;
+        width: 90%;
+    }
+}
+.cta-button {
+    margin-top: 25px;
+    width: 100%;                /* full width */
+    background: linear-gradient(90deg, #0077b6, #00b4d8); /* gradient colors */
+    color: #fff;                /* white text */
+    font-size: 1.2rem;          /* slightly bigger text */
+    font-weight: 600;           /* bold text */
+    padding: 14px;              /* enough padding for comfort */
+    border: none;               /* no border */
+    border-radius: 15px;        /* rounded corners */
+    cursor: pointer;            /* pointer on hover */
+    transition: all 0.3s ease;  /* smooth hover transition */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* soft shadow */
+}
+
+/* Hover effect */
+.cta-button:hover {
+    background: linear-gradient(90deg, #005f8e, #0096c7); /* darker gradient */
+    transform: translateY(-3px);   /* subtle lift effect */
+    box-shadow: 0 10px 25px rgba(22, 55, 112, 0.2); /* stronger shadow on hover */
+}
+
+/* Active (clicked) effect */
+.cta-button:active {
+    transform: translateY(0);      /* return button to original position */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+/* ... (Existing CSS) ... */
+
+/* ===== Results Section Enhancements ===== */
+
+/* General recommendation style */
+.recommendation {
+    font-size: 1.15rem; /* Make the text slightly bigger */
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: transparent; /* Default or light background */
+}
+
+/* HIGH SCORE: Green for excellent fit (80+ score) */
+.recommendation.green {
+    color: #1e8449; /* Darker green for text */
+    font-weight: 700;
+    background-color: #e6f7ee; /* Very light green background */
+    border: 1px solid #a9dfbf;
+}
+
+/* MEDIUM SCORE: Orange/Amber for moderate fit (50-79 score) */
+.recommendation.orange {
+    color: #d68910; /* Darker orange for text */
+    font-weight: 700;
+    background-color: #fef5e7; /* Very light orange background */
+    border: 1px solid #f5cba7;
+}
+
+/* LOW SCORE: Red for poor fit (below 50 score) */
+.recommendation.red {
+    color: #c0392b; /* Darker red for text */
+    font-weight: 700;
+    background-color: #fdedec; /* Very light red background */
+    border: 1px solid #eb9894;
+}
+
+/* Style for Skill Tags */
+.skill-tag {
+    display: inline-block;
+    background-color: #00b4d8;
+    color: white;
+    padding: 5px 10px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+/* Style for the container holding the results (assuming it's 'results-container' or similar) */
+.results-container h2,
+.results-container h3,
+.results-container h4 {
+    color: #003366; /* Consistent heading color */
+    margin-top: 20px;
+}
+
+/* 1. Transparency Breakdown Styling */
+.transparency-breakdown {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #eaf7ff; /* Light blue background for this section */
+    border: 1px solid #90e0ef;
+}
+
+.transparency-breakdown ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+    margin-top: 10px;
+}
+
+.transparency-breakdown li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #1c1c1c;
+    /* Use a custom dot or arrow for emphasis */
+    position: relative;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.transparency-breakdown li::before {
+    content: '•'; /* Unicode solid bullet */
+    color: #0077b6; /* Blue color for the bullet */
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+/* 2. Skill Gaps & Learning Path Styling */
+.skill-analysis {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.skill-analysis p {
+    font-weight: 500;
+    color: #555;
+}
+
+.skill-analysis ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+}
+
+.skill-analysis li {
+    background-color: #f7f9fc; /* Very light background for skill gaps */
+    border: 1px dashed #c0392b; /* Dashed red border for a warning look */
+    color: #c0392b; /* Red text for the missing skill */
+    padding: 8px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: block; /* Make list items take full width */
+}
+
+/* 3. Skills Found Styling (Skill Tags) */
+.skills-found {
+    margin-top: 25px;
+    padding-top: 10px;
+    border-top: 1px solid #d1d5db;
+}
+
+.skill-tag {
+    /* These styles appear correct from your previous HTML/CSS, but added here for completeness */
+    display: inline-block;
+    background-color: #00b4d8;
+    color: white;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

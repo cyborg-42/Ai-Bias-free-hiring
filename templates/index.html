@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Talent Scout</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Upload Resume</h1>
+
+    <form method="POST" action="{{ request.url_for('upload_file_and_score') }}" enctype="multipart/form-data">
+
+        <!-- JOB ROLE SELECTION -->
+        <label for="role">Target Job Role:</label>
+        <select name="role_name" id="role" required>
+            <option value="Junior Developer">Junior Developer</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="DevOps Engineer">DevOps Engineer</option>
+            <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+        </select>
+
+        <br><br>
+
+        <!-- RESUME UPLOAD -->
+        <label for="resume">Upload Resume (PDF/DOCX/csv):</label>
+        <input type="file" name="file" id="resume" accept=".pdf,.docx,.doc,.csv" required>
+
+        <br>
+
+        <!-- SUBMIT BUTTON -->
+       <button type="submit" class="cta-button">Analyze Resume</button>
+    </form>
+
+    <hr>
+
+    {% if result %}
+    <!-- STEP 1: I've added an ID to your results container -->
+    <div class="results-container" id="results-section">
+        <h2>Analysis Results for {{ role_name }}</h2>
+
+    <div class="score-card">
+    <h3>Bias-Free Total Fit Score: <strong>{{ result.Total_Score_Bias_Free|round(0) }} / 100</strong></h3>
+    
+    {% set score = result.Total_Score_Bias_Free|round(0) %}
+    {% set rec_class = 'red' %}
+    {% if score >= 80 %}
+        {% set rec_class = 'green' %}
+    {% elif score >= 50 %}
+        {% set rec_class = 'orange' %}
+    {% endif %}
+
+    <p class="recommendation {{ rec_class }}">
+        **Recommendation: {{ result.Recommendation }}**
+    </p>
+    </div>
+        <div class="transparency-breakdown">
+            <h4>Transparency Breakdown (The AI Weightage)</h4>
+            <ul>
+                <li>Semantic Fit Score (50% Weight): <strong>{{ result.F_semantic_scaled|round(1) }}%</strong></li>
+                <li>Mandatory Keyword Score (50% Weight): <strong>{{ result.F_keyword_scaled|round(1) }}%</strong></li>
+            </ul>
+            <p><strong>AI's Reasoning:</strong> {{ result.Explanation }}</p>
+        </div>
+
+        <div class="skill-analysis">
+            <h4>Skill Gaps & Learning Path (Inclusivity Feature):</h4>
+            {% if result.Skill_Gaps %}
+                <p>The following mandatory skills were not found:</p>
+                <ul>
+                    {% for skill in result.Skill_Gaps %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No critical skill gaps identified for this role. Excellent fit!</p>
+            {% endif %}
+        </div>
+
+        <div class="skills-found">
+            <h4>Skills Found (Objective Evidence):</h4>
+            <p>
+                {% for skill in result.Top_Skills %}
+                <span class="skill-tag">{{ skill }}</span>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+
+    <!-- STEP 2: This script runs only when results exist and scrolls down -->
+    <script>
+        document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+    </script>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
+

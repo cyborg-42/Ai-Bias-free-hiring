@@ -1,0 +1,88 @@
+{
+  "Junior Developer": {
+    "description": "Seeking a creative and motivated Junior Developer proficient in Python and Flask to work on RESTful APIs and modern web backends. Must understand version control using Git. Experience with database interaction (SQL) and testing frameworks is highly desired.",
+    "required": {
+      "Python": 50,
+      "Flask": 20,
+      "Git": 10
+    },
+    "desired": {
+      "SQL": 5,
+      "Testing": 5
+    },
+    "learning_path": {
+      "SQL": "https://www.freecodecamp.org/news/sql-course/",
+      "Testing": "https://flask.palletsprojects.com/en/latest/testing/"
+    }
+  },
+  "Data Analyst": {
+    "description": "A Data Analyst role focused on cleansing, transforming, and modeling data. Requires strong proficiency in Pandas for data manipulation, SQL for querying databases, and advanced Excel skills for reporting. Experience with visualization tools like Tableau is a plus.",
+    "required": {
+      "Pandas": 50,
+      "SQL": 20,
+      "Excel": 10
+    },
+    "desired": {
+      "Tableau": 5,
+      "Statistics": 5
+    },
+    "learning_path": {
+      "Tableau": "https://www.tableau.com/learn/training",
+      "Statistics": "https://www.coursera.org/specializations/mathematics-for-machine-learning-data-science"
+    }
+  },
+  "DevOps Engineer": {
+    "description": "A core DevOps position requiring expertise in cloud infrastructure (AWS/Azure) and continuous integration/continuous deployment (CI/CD) pipelines using Jenkins or GitLab. Must be comfortable with containerization (Docker/Kubernetes).",
+    "required": {
+      "AWS": 40,
+      "Docker": 30,
+      "Kubernetes": 10
+    },
+    "desired": {
+      "Terraform": 10,
+      "CI/CD": 10
+    },
+    "learning_path": {
+      "Terraform": "https://developer.hashicorp.com/terraform/tutorials/aws-get-started",
+      "CI/CD": "https://docs.gitlab.com/ee/ci/pipelines/"
+    }
+  },
+  "Machine Learning Engineer": {
+    "description": "Designing, building, and deploying ML models and scalable systems using Python and major frameworks. Requires a strong background in statistics, data processing, and cloud deployment of AI solutions.",
+    "required": {
+      "Python": 35,
+      "TensorFlow": 25,
+      "scikit-learn": 15,
+      "Statistics": 10
+    },
+    "desired": {
+      "Deep Learning": 5,
+      "Spark": 5
+    },
+    "learning_path": {
+      "TensorFlow": "https://www.coursera.org/specializations/tensorflow-in-practice",
+      "scikit-learn": "https://www.coursera.org/learn/machine-learning-with-python",
+      "Statistics": "https://www.coursera.org/specializations/mathematics-for-machine-learning-data-science",
+      "Deep Learning": "https://www.simplilearn.com/deep-learning-course-free-training-video"
+    }
+  },
+  "Frontend Developer": {
+    "description": "Building responsive, user-facing web applications using HTML, CSS, and JavaScript. Requires expertise in a modern framework like React and strong familiarity with version control (Git) and UI/UX principles.",
+    "required": {
+      "JavaScript": 40,
+      "React": 25,
+      "HTML": 10,
+      "CSS": 10
+    },
+    "desired": {
+      "UI/UX": 5,
+      "Figma": 5
+    },
+    "learning_path": {
+      "JavaScript": "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+      "React": "https://www.coursera.org/specializations/meta-react",
+      "UI/UX": "https://www.figma.com/education/",
+      "Figma": "https://www.figma.com/education/"
+    }
+  }
+}
